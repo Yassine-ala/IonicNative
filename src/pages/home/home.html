@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <p>
+    Permet de stocker des preferences (Light data)
+  </p>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Surname</ion-label>
+      <ion-input type="text" [(ngModel)]="surname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label fixed>Years</ion-label>
+      <ion-input type="text" [(ngModel)]="years"></ion-input>
+    </ion-item>
+
+    <div padding style="margin: auto; text-align: center">
+      <button ion-button  round color="primary" (tap)="storeIdentity()">Save card</button>
+      <button ion-button  round color="primary" (tap)="getIdentity()">Get card</button>
+    </div>
+  </ion-list>
+
+</ion-content>
