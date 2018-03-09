@@ -3,6 +3,7 @@ import {AlertController, NavController} from 'ionic-angular';
 
 import {NativeStorage} from "@ionic-native/native-storage";
 import {SqliPage} from "../sqli/sqli";
+import {MapsPage} from "../maps/maps";
 
 
 @Component({
@@ -19,8 +20,12 @@ export class HomePage {
 
   }
 
-  switchpage(){
+  switchdbpage(){
   this.navCtrl.push(SqliPage)
+  }
+
+  switchmpage(){
+    this.navCtrl.push(MapsPage)
   }
 
   storeAlert() {

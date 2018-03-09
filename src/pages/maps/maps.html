@@ -1,0 +1,39 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Google Maps</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div id="floating-panel">
+    <b>Start: </b>
+    <select [(ngModel)]="start" id="start" (change)="calculateAndDisplayRoute()">
+      <option value="Paris">Paris</option>
+      <option value="Lyon">Lyon</option>
+      <option value="Grenoble">Grenoble</option>
+      <option value="Nice">Nice</option>
+      <option value="Rennes">Rennes</option>
+      <option value="Marseille">Marseille</option>
+      <option value="Lille">Lille</option>
+      <option value="Toulouse">Toulouse</option>
+      <option value="Bordeaux">Bordeaux</option>
+    </select><br>
+    <b>End: </b>
+    <select [(ngModel)]="end" id="end" (change)="calculateAndDisplayRoute()">
+      <option value="Paris">Paris</option>
+      <option value="Lyon">Lyon</option>
+      <option value="Grenoble">Grenoble</option>
+      <option value="Nice">Nice</option>
+      <option value="Rennes">Rennes</option>
+      <option value="Marseille">Marseille</option>
+      <option value="Lille">Lille</option>
+      <option value="Toulouse">Toulouse</option>
+      <option value="Bordeaux">Bordeaux</option>
+    </select>
+  </div>
+  <div #map id="map"></div>
+</ion-content>

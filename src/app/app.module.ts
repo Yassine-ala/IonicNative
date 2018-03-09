@@ -12,12 +12,15 @@ import {NativeStorage} from "@ionic-native/native-storage";
 import { SQLite } from '@ionic-native/sqlite';
 //Pages
 import {SqliPage} from "../pages/sqli/sqli";
+import {MapsPage} from "../pages/maps/maps";
+import {GoogleMaps} from "@ionic-native/google-maps";
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    SqliPage
+    SqliPage,
+    MapsPage
   ],
   imports: [
     BrowserModule,
@@ -27,13 +30,15 @@ import {SqliPage} from "../pages/sqli/sqli";
   entryComponents: [
     MyApp,
     HomePage,
-    SqliPage
+    SqliPage,
+    MapsPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NativeStorage,
     SQLite,
+    GoogleMaps,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
