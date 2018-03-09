@@ -7,29 +7,33 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 
-import {NativeStorage} from "@ionic-native/native-storage"; [ NativeStorage]
-import {AlertController} from 'ionic-angular';
+//Native
+import {NativeStorage} from "@ionic-native/native-storage";
+import { SQLite } from '@ionic-native/sqlite';
+//Pages
+import {SqliPage} from "../pages/sqli/sqli";
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    SqliPage
   ],
   imports: [
     BrowserModule,
-
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    SqliPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     NativeStorage,
-    AlertController,
+    SQLite,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

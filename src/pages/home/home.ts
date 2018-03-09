@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import {AlertController, NavController} from 'ionic-angular';
 
-import {NativeStorage} from "@ionic-native/native-storage"; [ NativeStorage]
+import {NativeStorage} from "@ionic-native/native-storage";
+import {SqliPage} from "../sqli/sqli";
 
 
 @Component({
@@ -16,6 +17,10 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private nativeStorage: NativeStorage, private alertCtrl: AlertController) {
 
+  }
+
+  switchpage(){
+  this.navCtrl.push(SqliPage)
   }
 
   storeAlert() {

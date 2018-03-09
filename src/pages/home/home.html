@@ -13,7 +13,6 @@
   </p>
 
   <ion-list>
-
     <ion-item>
       <ion-label fixed>Name</ion-label>
       <ion-input type="text" [(ngModel)]="name"></ion-input>
@@ -26,11 +25,14 @@
       <ion-label fixed>Years</ion-label>
       <ion-input type="text" [(ngModel)]="years"></ion-input>
     </ion-item>
-
-    <div padding style="margin: auto; text-align: center">
+<br>
+    <div>
       <button ion-button  round color="primary" (tap)="storeIdentity()">Save card</button>
       <button ion-button  round color="primary" (tap)="getIdentity()">Get card</button>
+      <br>
+      <button ion-button  round color="primary" (tap)="switchpage()">Sqli Page</button>
     </div>
+
   </ion-list>
 
 </ion-content>
