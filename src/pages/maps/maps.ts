@@ -1,6 +1,5 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import {IonicPage, NavController} from 'ionic-angular';
-import {GoogleMapsEvent} from "@ionic-native/google-maps";
 
 declare var google;
 
@@ -51,7 +50,7 @@ export class MapsPage {
       if (status === 'OK') {
         this.directionsDisplay.setDirections(response);
       } else {
-        //window.alert('Directions request failed due to ' + status);
+       // window.alert('Directions request failed due to ' + status);
       }
     });
   }

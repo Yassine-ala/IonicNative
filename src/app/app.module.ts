@@ -3,24 +3,31 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
 
 //Native
 import {NativeStorage} from "@ionic-native/native-storage";
-import { SQLite } from '@ionic-native/sqlite';
+import {SQLite} from '@ionic-native/sqlite';
+import {GoogleMaps} from "@ionic-native/google-maps";
+import { Camera } from '@ionic-native/camera';
+
+//plugins
+import {BarcodeScanner} from "@ionic-native/barcode-scanner";
+
 //Pages
+import { HomePage } from '../pages/home/home';
 import {SqliPage} from "../pages/sqli/sqli";
 import {MapsPage} from "../pages/maps/maps";
-import {GoogleMaps} from "@ionic-native/google-maps";
+import {QrcodePage} from "../pages/qrcode/qrcode";
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     SqliPage,
-    MapsPage
+    MapsPage,
+    QrcodePage
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,8 @@ import {GoogleMaps} from "@ionic-native/google-maps";
     MyApp,
     HomePage,
     SqliPage,
-    MapsPage
+    MapsPage,
+    QrcodePage
   ],
   providers: [
     StatusBar,
@@ -39,7 +47,10 @@ import {GoogleMaps} from "@ionic-native/google-maps";
     NativeStorage,
     SQLite,
     GoogleMaps,
+    BarcodeScanner,
+    Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>qrcode</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+
+  <div>
+  <img src="{{img}}" />
+    <hr>
+    <button ion-button full color="primary" (tap)="pic()">Instant Pic</button>
+  </div>
+
+  <button ion-button full  color="dark" (tap)="scanbar()">Scan Barcode</button>
+
+  <div *ngIf="scannedData.text">
+    <label>Your barcode is :</label>
+    <br>
+    <span>{{scannedData.text}}</span>
+  </div>
+
+</ion-content>

@@ -4,6 +4,7 @@ import {AlertController, NavController} from 'ionic-angular';
 import {NativeStorage} from "@ionic-native/native-storage";
 import {SqliPage} from "../sqli/sqli";
 import {MapsPage} from "../maps/maps";
+import {QrcodePage} from "../qrcode/qrcode";
 
 
 @Component({
@@ -20,14 +21,18 @@ export class HomePage {
 
   }
 
+  //PageSwitch
+  switchqrpage(){
+    this.navCtrl.push(QrcodePage);
+  }
   switchdbpage(){
-  this.navCtrl.push(SqliPage)
+  this.navCtrl.push(SqliPage);
   }
-
   switchmpage(){
-    this.navCtrl.push(MapsPage)
+    this.navCtrl.push(MapsPage);
   }
 
+  //NativeStorage
   storeAlert() {
     let alert = this.alertCtrl.create({
       title: 'Card Saved',
@@ -36,7 +41,6 @@ export class HomePage {
     });
     alert.present();
   }
-
   getAlert(a: string, b: string, c: number) {
     let alert = this.alertCtrl.create({
       title: 'Your Card',
@@ -45,7 +49,6 @@ export class HomePage {
     });
     alert.present();
   }
-
   public storeIdentity(): void {
     this.nativeStorage.setItem('my-identity-card',{
       name: this.name,
@@ -60,7 +63,6 @@ export class HomePage {
     this.surname="";
     this.years=null;
   }
-
   public getIdentity(): void {
     this.nativeStorage.getItem('my-identity-card')
     .then(
