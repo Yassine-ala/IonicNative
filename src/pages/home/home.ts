@@ -5,6 +5,7 @@ import {NativeStorage} from "@ionic-native/native-storage";
 import {SqliPage} from "../sqli/sqli";
 import {MapsPage} from "../maps/maps";
 import {QrcodePage} from "../qrcode/qrcode";
+import {MediaPage} from "../media/media";
 
 
 @Component({
@@ -24,6 +25,9 @@ export class HomePage {
   //PageSwitch
   switchqrpage(){
     this.navCtrl.push(QrcodePage);
+  }
+  switchmediapage(){
+    this.navCtrl.push(MediaPage);
   }
   switchdbpage(){
   this.navCtrl.push(SqliPage);

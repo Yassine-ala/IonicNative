@@ -43,7 +43,6 @@ export class QrcodePage {
     });
   }
 
-
   scanbar(){
     this.barOptions= {
       prompt: 'Scan your barcode'
@@ -55,12 +54,12 @@ export class QrcodePage {
     })
   }
 
-  encodebar(){
+ /* encodebar(){
     this.barScanner.encode(this.barScanner.Encode.TEXT_TYPE, this.encodText).then((data) => {
       this.encodeData = data
     }, (err) => {
       console.log('Error :', err);
     })
-  }
+  }*/
 
 }

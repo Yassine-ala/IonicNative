@@ -1,0 +1,28 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>media</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card>
+    <ion-card-content>
+      <ion-card-title>
+        <button ion-button color="danger" (click)="stopRecord()" *ngIf="recording"><ion-icon name="mic-off"></ion-icon>&nbsp;&nbsp;Stop Record</button>
+        <button ion-button color="primary" (click)="startRecord()" *ngIf="!recording"><ion-icon name="mic"></ion-icon>&nbsp;&nbsp;Start Record</button>
+      </ion-card-title>
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-item *ngFor="let audio of audioList; index as i;">
+      <p>{{audio.filename}}</p>
+      <button ion-button clear item-start *ngIf="playing == true" (click)="playAudio(audio.filename, i)"><ion-icon name="pause"></ion-icon></button>
+      <button ion-button clear item-start *ngIf="playing == false" (click)="playAudio(audio.filename, i)"><ion-icon name="play"></ion-icon></button>
+      <button ion-button clear item-end (tap)="deleteAudio(audio.filename, i)"><ion-icon name="trash"></ion-icon></button>
+      <input type="range" min="0" [max]="duration" [value]="timer">
+    </ion-item>
+  </ion-list>
+  <h4>Duration : {{this.duration}}</h4>
+  <h4>Timer : {{this.timer}}</h4>
+</ion-content>

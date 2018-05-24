@@ -10,6 +10,9 @@ import {NativeStorage} from "@ionic-native/native-storage";
 import {SQLite} from '@ionic-native/sqlite';
 import {GoogleMaps} from "@ionic-native/google-maps";
 import { Camera } from '@ionic-native/camera';
+import {Media} from "@ionic-native/media";
+import {MediaCapture} from "@ionic-native/media-capture";
+import { File } from '@ionic-native/file';
 
 //plugins
 import {BarcodeScanner} from "@ionic-native/barcode-scanner";
@@ -19,6 +22,9 @@ import { HomePage } from '../pages/home/home';
 import {SqliPage} from "../pages/sqli/sqli";
 import {MapsPage} from "../pages/maps/maps";
 import {QrcodePage} from "../pages/qrcode/qrcode";
+import {MediaPage} from "../pages/media/media";
+
+
 
 
 @NgModule({
@@ -27,7 +33,8 @@ import {QrcodePage} from "../pages/qrcode/qrcode";
     HomePage,
     SqliPage,
     MapsPage,
-    QrcodePage
+    QrcodePage,
+    MediaPage
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ import {QrcodePage} from "../pages/qrcode/qrcode";
     HomePage,
     SqliPage,
     MapsPage,
-    QrcodePage
+    QrcodePage,
+    MediaPage
   ],
   providers: [
     StatusBar,
@@ -48,6 +56,9 @@ import {QrcodePage} from "../pages/qrcode/qrcode";
     SQLite,
     GoogleMaps,
     BarcodeScanner,
+    File,
+    MediaCapture,
+    Media,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
