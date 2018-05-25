@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>TextZone</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h1 class="title">Red Shoes</h1>
+  <img class="productPic" src="./assets/imgs/shoes.jpg">
+  <div class="contentDiv">
+    <span class="item" *ngFor="let m of messages; let i=index">
+      <button ion-item (tap)="smartModal(m.type, i)" class="msgItem">
+        <div>
+          <img class="vertAln" src="./assets/icon/baseline-person-24px.svg" margin-right="5%">
+          <h3 class="vertAln">
+             {{m.userName}}
+          </h3>
+        </div>
+        <div item-end>
+          <span *ngIf="m.type == 'pic'" class="icon-photo_camera greenIcon"></span>
+            <span *ngIf="m.type == 'text'" class="icon-text_format greenIcon"></span>
+          <span *ngIf="m.type == 'audio'" class="icon-mic greenIcon"></span>
+          <span *ngIf="m.type == 'vid'" class="icon-videocam greenIcon"></span>
+          <span margin-left="5%"  class="vertAln" ><b> {{m.date}} </b></span>
+        </div>
+      </button>
+    </span>
+  </div>
+
+  <div margin-top="5%">
+    <ion-fab center>
+      <button ion-fab>Comment</button>
+             <ion-fab-list side="left">
+      <button ion-fab><img src="./assets/icon/baseline-text_format-24px.svg"></button>
+      <button ion-fab><img src="./assets/icon/baseline-mic-24px.svg"></button>
+    </ion-fab-list>
+      <ion-fab-list side="right">
+        <button ion-fab (tap)="pic()"><img src="./assets/icon/baseline-photo_camera-24px.svg"></button>
+        <button ion-fab (tap)="startRecording()"><img src="./assets/icon/baseline-videocam-24px.svg"></button>
+      </ion-fab-list>
+    </ion-fab>
+  </div>
+</ion-content>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {AlertController, NavController} from 'ionic-angular';
 
 import {NativeStorage} from "@ionic-native/native-storage";
@@ -6,7 +6,7 @@ import {SqliPage} from "../sqli/sqli";
 import {MapsPage} from "../maps/maps";
 import {QrcodePage} from "../qrcode/qrcode";
 import {MediaPage} from "../media/media";
-
+import {TextzonePage} from "../textzone/textzone";
 
 @Component({
   selector: 'page-home',
@@ -18,9 +18,9 @@ export class HomePage {
   surname: string;
   years: number;
 
-  constructor(public navCtrl: NavController, private nativeStorage: NativeStorage, private alertCtrl: AlertController) {
-
-  }
+  constructor(public navCtrl: NavController,
+              private nativeStorage: NativeStorage,
+              private alertCtrl: AlertController) {}
 
   //PageSwitch
   switchqrpage(){
@@ -34,6 +34,9 @@ export class HomePage {
   }
   switchmpage(){
     this.navCtrl.push(MapsPage);
+  }
+  textzonepage() {
+    this.navCtrl.push(TextzonePage);
   }
 
   //NativeStorage
@@ -76,5 +79,6 @@ export class HomePage {
     error => console.error('Error storing item', error)
   );
 }
+
 
 }

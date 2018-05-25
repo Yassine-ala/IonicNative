@@ -23,6 +23,8 @@ import {SqliPage} from "../pages/sqli/sqli";
 import {MapsPage} from "../pages/maps/maps";
 import {QrcodePage} from "../pages/qrcode/qrcode";
 import {MediaPage} from "../pages/media/media";
+import {ImgModal} from "../modals/img/img.modal";
+import {TextzonePage} from "../pages/textzone/textzone";
 
 
 
@@ -34,7 +36,9 @@ import {MediaPage} from "../pages/media/media";
     SqliPage,
     MapsPage,
     QrcodePage,
-    MediaPage
+    MediaPage,
+    ImgModal,
+    TextzonePage
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,9 @@ import {MediaPage} from "../pages/media/media";
     SqliPage,
     MapsPage,
     QrcodePage,
-    MediaPage
+    MediaPage,
+    ImgModal,
+    TextzonePage
   ],
   providers: [
     StatusBar,

@@ -96,8 +96,8 @@
         <variable name="ANDROID_SUPPORT_VERSION" value="24.+" />
     </plugin>
     <plugin name="cordova-plugin-media" spec="^5.0.2" />
-    <engine name="android" spec="7.0.0" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-media-capture" spec="^3.0.2" />
     <allow-navigation href="http://172.27.16.1:8100" />
+    <engine name="android" spec="~7.0.0" />
 </widget>

@@ -1,0 +1,48 @@
+page-textzone {
+
+  img {
+    image-orientation: from-image;
+  }
+
+  .productPic {
+    width: 40%;
+    height: 22%;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+  }
+
+  .vertAln {
+    vertical-align: middle;
+    display:inline-block;
+  }
+
+  .svg {
+    vertical-align: middle;
+    display:inline-block;
+  }
+
+  .greenIcon {
+    vertical-align: middle;
+    display:inline-block;
+    color: #99cc00;
+    font-size: 26px;
+  }
+
+  .msgItem {
+    background-color: lightgray;
+    margin-top: 1%;
+  }
+
+  .title {
+    margin: 3%;
+    text-align: center;
+    font-size: 32px;
+  }
+
+  .contentDiv {
+    margin-top: 3%;
+    height: 45%;
+    overflow: auto;
+  }
+}

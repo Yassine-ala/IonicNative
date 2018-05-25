@@ -1,0 +1,10 @@
+<ion-content padding class="modal">
+  <img class="imgs" *ngIf="type == 'pic'" [src]="msg" width="auto" height="auto" (tap)="closeModal()">
+  <video *ngIf="type == 'video'" width="auto" height="auto" (tap)="closeModal()">
+  <source [src]="msg" type="video/mp4">
+  </video>
+  <audio controls *ngIf="type == 'audio'">
+    <source [src]="msg" type="audio/mpeg">
+  </audio>
+  <div class="boxDiv" *ngIf="type == 'text'" (tap)="closeModal()"><h1>{{msg}}</h1></div>
+</ion-content>
