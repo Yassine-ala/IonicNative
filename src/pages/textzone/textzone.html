@@ -1,16 +1,36 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>TextZone</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
 
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <h1 class="title">Red Shoes</h1>
   <img class="productPic" src="./assets/imgs/shoes.jpg">
+
+<div class="wrapper">
+  <div class="star-rating">
+    <input id="star-5" type="radio" name="rating" value=5 [(ngModel)]="rating">
+    <label for="star-5" title="5 stars">
+      <i class="active fa fa-star" aria-hidden="true"></i>
+    </label>
+    <input id="star-4" type="radio" name="rating" value=4 [(ngModel)]="rating">
+    <label for="star-4" title="4 stars">
+      <i class="active fa fa-star" aria-hidden="true"></i>
+    </label>
+    <input id="star-3" type="radio" name="rating" value=3 [(ngModel)]="rating">
+    <label for="star-3" title="3 stars">
+      <i class="active fa fa-star" aria-hidden="true"></i>
+    </label>
+    <input id="star-2" type="radio" name="rating" value=2 [(ngModel)]="rating">
+    <label for="star-2" title="2 stars">
+      <i class="active fa fa-star" aria-hidden="true"></i>
+    </label>
+    <input id="star-1" type="radio" name="rating" value=1 [(ngModel)]="rating">
+    <label for="star-1" title="1 star">
+      <i class="active fa fa-star" aria-hidden="true"></i></label>
+  </div>
+</div>
+
   <div class="contentDiv">
-    <span class="item" *ngFor="let m of messages; let i=index">
-      <button ion-item (tap)="smartModal(m.type, i)" class="msgItem">
+    <span class="item" *ngFor="let m of messages.reverse(); let i=index">
+      <button ion-item (tap)="smartModal(m.type, revrseIndex(i))" class="msgItem">
         <div>
           <img class="vertAln" src="./assets/icon/baseline-person-24px.svg" margin-right="5%">
           <h3 class="vertAln">
@@ -28,17 +48,20 @@
     </span>
   </div>
 
-  <div margin-top="5%">
-    <ion-fab center>
-      <button ion-fab>Comment</button>
-             <ion-fab-list side="left">
-      <button ion-fab><img src="./assets/icon/baseline-text_format-24px.svg"></button>
-      <button ion-fab><img src="./assets/icon/baseline-mic-24px.svg"></button>
-    </ion-fab-list>
-      <ion-fab-list side="right">
-        <button ion-fab (tap)="pic()"><img src="./assets/icon/baseline-photo_camera-24px.svg"></button>
-        <button ion-fab (tap)="startRecording()"><img src="./assets/icon/baseline-videocam-24px.svg"></button>
-      </ion-fab-list>
-    </ion-fab>
+  <div class="wrapper">
+  <button ion-button style="height: 50px; width: 60%" *ngIf="expanded == false" (tap)="expanded = true">Add a Comment</button>
   </div>
+
+  <div class="wrapper"  *ngIf="expanded == true">
+      <button ion-button color="light" (tap)="expanded = false" class="smallSquareButton"><ion-icon name="close"></ion-icon></button>
+
+      <button ion-button (tap)="addTextComment()" class="smallSquareButton"><img src="./assets/icon/baseline-text_format-24px.svg"></button>
+
+      <button ion-button *ngIf="recording == false" (tap)="startRecordingAudio()" color="primary" class="smallSquareButton"><img src="./assets/icon/baseline-mic-24px.svg"></button>
+      <button ion-button *ngIf="recording == true" (tap)="stopRecordingAudio()" color="danger" class="smallSquareButton"><ion-icon name="square"></ion-icon></button>
+
+      <button ion-button (tap)="pic()" class="smallSquareButton"><img src="./assets/icon/baseline-photo_camera-24px.svg"></button>
+      <button ion-button (tap)="startRecordingVideo()" class="smallSquareButton"><img src="./assets/icon/baseline-videocam-24px.svg"></button>
+  </div>
+
 </ion-content>
